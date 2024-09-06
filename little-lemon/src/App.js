@@ -1,5 +1,5 @@
 import "./App.css";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import BookingPage from "./pages/BookingPage";
 
 
@@ -18,7 +18,8 @@ const reducer = (state, action) => {
 }
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, {availableTimes:["17:00", "18:00","19:00","20:00","21:00","22:00"]});
+  const [date, setDate] = useState(new Date());
+  const [state, dispatch] = useReducer(reducer, {availableTimes:[""]});
 
   const updateTimes = () => {
     dispatch({type: "updateTimes"})
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div>
-      <BookingPage availableTimes={state.availableTimes} handleTimes={updateTimes} />
+      <BookingPage availableTimes={state.availableTimes} handleTimes={updateTimes} date={date} setDate={setDate}/>
     </div>
   );
 }
