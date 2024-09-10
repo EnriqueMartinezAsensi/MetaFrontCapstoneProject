@@ -1,34 +1,27 @@
 import "./App.css";
-import { useReducer, useState } from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom"
 import BookingPage from "./pages/BookingPage";
-
-
-const reducer = (state, action) => {
-  if(action.type === "updateTimes"){
-    return{
-      availableTimes: ["17:00", "18:00","19:00","20:00","21:00","22:00"]
-    }
-  }
-  else if(action.type === "initializeTimes"){
-    return{
-      availableTimes: ["17:00", "18:00","19:00","20:00","21:00","22:00"]
-    }
-  }
-  else throw Error('Unknown action.');
-}
+import useBooking from "./hooks/useBooking";
+import Confirm from "./pages/Confirm";
 
 function App() {
-  const [date, setDate] = useState(new Date());
-  const [state, dispatch] = useReducer(reducer, {availableTimes:[""]});
-
-  const updateTimes = () => {
-    dispatch({type: "updateTimes"})
-  }
+  const { availableTimes, updateTimes, date, setDate } = useBooking();
 
   return (
-    <div>
-      <BookingPage availableTimes={state.availableTimes} handleTimes={updateTimes} date={date} setDate={setDate}/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<BookingPage availableTimes={availableTimes} handleTimes={updateTimes} date={date} setDate={setDate} />}
+
+        >
+        </Route>
+        <Route
+          path="/confirm"
+          element={<Confirm date={date.toISOString().split('T')[0]}></Confirm>}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
