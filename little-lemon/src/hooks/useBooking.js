@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useReducer, useState } from "react";
-import { fetchAPI } from "../api/api_fake";
+import { fetchAPI, submitAPI } from "../api/api_fake";
 
 const reducer = (state, action) => {
   if (action.type === "updateTimes") {
@@ -26,11 +26,16 @@ const useBooking = () => {
     dispatch({ type: "updateTimes", payload: time });
   };
 
+  const bookHandle = async (formdata) => {
+    updateTimes(formdata.time);
+    return await submitAPI(formdata);
+  }
+
   useEffect(() => {
     initializeTimes(date);
   }, [date, initializeTimes]);
 
-  return { availableTimes: state.availableTimes, updateTimes, date, setDate };
+  return { availableTimes: state.availableTimes, bookHandle, date, setDate };
 };
 
 export default useBooking;

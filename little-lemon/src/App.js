@@ -5,15 +5,14 @@ import useBooking from "./hooks/useBooking";
 import Confirm from "./pages/Confirm";
 
 function App() {
-  const { availableTimes, updateTimes, date, setDate } = useBooking();
+  const { availableTimes, bookHandle, date, setDate } = useBooking();
 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
-          element={<BookingPage availableTimes={availableTimes} handleTimes={updateTimes} date={date} setDate={setDate} />}
-
+          element={<BookingPage availableTimes={availableTimes} submitForm={bookHandle} date={date} setDate={setDate} />}
         >
         </Route>
         <Route
