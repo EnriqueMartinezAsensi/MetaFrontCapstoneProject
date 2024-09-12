@@ -65,7 +65,7 @@ const BookingPage = ({availableTimes, submitForm, date, setDate}) => {
           <option value="Birthday">Birthday</option>
           <option value="Anniversary">Anniversary</option>
         </select>
-        <input type='submit' value='Make Your reservation' disabled={!time?.length || !guests} aria-label="On Click"></input>
+        <input id="button" type='submit' value='Make Your reservation' disabled={!time?.length || !guests} aria-label="On Click"></input>
       </form>
   );
 }
