@@ -1,25 +1,21 @@
 import { useCallback, useEffect, useReducer, useState } from "react";
 import { fetchAPI, submitAPI } from "../api/api_fake";
 
-const reducer = (state, action) => {
+const reducer = (previousState, action) => {
   if (action.type === "updateTimes") {
-    return {
-      availableTimes: state.availableTimes.filter((value) => value !== action.payload),
-    };
+    return previousState.filter((value) => value !== action.payload);
   } else if (action.type === "initializeTimes") {
-    return {
-      availableTimes: action.payload,
-    };
+    return action.payload;
   } else throw Error("Unknown action.");
 };
 
 const useBooking = () => {
   const [date, setDate] = useState(new Date());
-  const [state, dispatch] = useReducer(reducer, { availableTimes: [] });
+  const [availableTimes, dispatch] = useReducer(reducer,[] );
 
-  const initializeTimes = useCallback(async (date) => {
+  const initializeTimes = useCallback((date) => {
     fetchAPI(date).then((value) => dispatch({ type: "initializeTimes", payload: value }));
-    console.log(state.availableTimes);
+    console.log(availableTimes);
   }, []);
 
   const updateTimes = (time) => {
@@ -35,7 +31,7 @@ const useBooking = () => {
     initializeTimes(date);
   }, [date, initializeTimes]);
 
-  return { availableTimes: state.availableTimes, bookHandle, date, setDate };
+  return { availableTimes, bookHandle, date, setDate };
 };
 
 export default useBooking;
