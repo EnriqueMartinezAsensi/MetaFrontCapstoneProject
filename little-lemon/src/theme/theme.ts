@@ -2,6 +2,7 @@ const theme = {
   colors: {
     common: {
       black: `black`,
+      grey: `lightgrey`,
       white: `white`,
     },
     primary: {

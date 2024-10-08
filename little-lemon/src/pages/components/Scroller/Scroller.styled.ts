@@ -6,12 +6,12 @@ export const ScrollerWrapper = styled.section`
   height: 500px;
   justify-content: space-between;
 `
-
 export const ScrollerTextWrapper = styled.div`
   display: flex;
-  width: 50%;
+  justify-content: center;
   flex-direction: column;
-  >h1, h2, p{
+  width: 50%;
+  >p, h2{
     color: ${({theme}) => theme.colors.common.white};
   }
 `
@@ -23,7 +23,26 @@ export const ScrollerImageWrapper = styled.div`
 `
 export const Image = styled.img`
   width: 400px;
-  max-height: 600px;
+  max-height: 500px;
+  margin: 50px 0px 0px 0px;
   z-index: 90;
   border-radius: ${({theme})=> theme.radiuses.medium}px;
+`
+
+export const HeadTitle = styled.h1`
+  margin: 0.5rem 0rem ;
+  font-size: 3rem;
+  color: ${({theme}) => theme.colors.button.normal.background};
+`
+
+export const HeadSubtitle = styled.h2`
+  margin: 0.5rem 0rem;
+  font-size: larger;
+`
+export const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0;
+  padding: 0;
 `
