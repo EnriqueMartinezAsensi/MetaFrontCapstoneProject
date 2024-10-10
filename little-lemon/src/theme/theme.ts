@@ -28,6 +28,30 @@ const theme = {
       }
     }
   },
+  text: {
+    title: {
+      fontFamily: "MarkaziText",
+      fontSize: "60pt",
+    },
+    subtitle: {
+      fontFamily: "MarkaziText",
+      fontSize: "40pt",
+    },
+    normal: {
+      fontFamily: "Karla",
+      fontSize: "18pt",
+    },
+    card: {
+      fontFamily: "Karla",
+      fontSize: "16pt",
+      lineHeight: "1.5",
+    },
+    navigationBar: {
+      fontFamily: "Karla",
+      fontSize: "14pt",
+      fontWeight: 600,
+    },
+  },
   radiuses: {
     medium: `16`,
   },

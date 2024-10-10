@@ -30,14 +30,16 @@ export const Image = styled.img`
 `
 
 export const HeadTitle = styled.h1`
-  margin: 0.5rem 0rem ;
-  font-size: 3rem;
+  margin: 0rem 0rem ;
+  font-family: ${({theme}) => theme.text.title.fontFamily};
+  font-size: ${({theme}) => theme.text.title.fontSize};
   color: ${({theme}) => theme.colors.button.normal.background};
 `
 
 export const HeadSubtitle = styled.h2`
-  margin: 0.5rem 0rem;
-  font-size: larger;
+  margin: 0;
+  font-family: ${({theme}) => theme.text.subtitle.fontFamily};
+  font-size: ${({theme}) => theme.text.subtitle.fontSize};
 `
 export const ButtonContainer = styled.div`
   width: 100%;

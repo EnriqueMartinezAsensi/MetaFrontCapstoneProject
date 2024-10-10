@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 import footerLogo from "../../../assets/images/logo-vertical-white.png"
-import { FooterWrapper, FooterMenu, FooterBertical, FooterItem, FooterTitle } from "./Footer.styled"
+import { FooterWrapper, FooterMenu, FooterBertical, FooterItem, FooterTitle, FooterLogo } from "./Footer.styled"
 
 const Footer = () => {
   return <FooterWrapper>
     <FooterMenu>
       <FooterItem className="img-footer">
-        <img src={footerLogo} alt="Logo of the restaurant" height={200}/>
+        <FooterLogo src={footerLogo} alt="Logo of the restaurant" height={200}/>
       </FooterItem>
       <FooterItem className="contact">
         <FooterTitle className="footer-header">Navigation</FooterTitle>

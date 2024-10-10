@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const SpecialsHeader = styled.h1`
   margin: 2rem;
-  font-size: 2rem;
+  font-family: ${({theme}) => theme.text.title.fontFamily};
+  font-size: ${({theme}) => theme.text.title.fontSize};
 `
 
 export const SepcialsCardWrapper = styled.div`

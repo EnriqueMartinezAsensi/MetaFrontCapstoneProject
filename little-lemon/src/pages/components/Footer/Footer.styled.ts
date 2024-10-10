@@ -38,3 +38,7 @@ export const FooterBertical = styled.ul`
   padding: 10px;
   list-style-type: none;
 `
+
+export const FooterLogo = styled.img`
+  margin: 1rem 0;
+`

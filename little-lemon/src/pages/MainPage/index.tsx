@@ -3,6 +3,7 @@ import MenuBar from "../components/MenuBar"
 import Scroller from "../components/Scroller";
 import SectionWrapper from "../components/SectionWrapper"
 import Specials from "../components/Specials";
+import Testimonials from "../components/Testimonials";
 import { Spacer } from "./MainPage.styled";
 
 const MainPage = () => {
@@ -16,7 +17,7 @@ const MainPage = () => {
       <Specials />
     </SectionWrapper>
     <SectionWrapper background="dark">
-      <Scroller />
+      <Testimonials />
     </SectionWrapper>
     <SectionWrapper background="light">
       <Specials />

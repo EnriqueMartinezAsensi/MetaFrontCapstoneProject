@@ -14,7 +14,7 @@ export const FoodCardWrapper = styled.div`
 
 export const FoodCardImg = styled.img`
   width: 100%;
-  height: 40%;
+  height: 35%;
   border-radius: ${({theme}) => theme.radiuses.medium}px;
 `
 
@@ -27,12 +27,15 @@ export const TitleWrapper = styled.div`
 
 export const CardTitle = styled.h3`
   margin: 0.7rem;
-  font-size: 1.5rem;
+  font-family: ${({theme}) => theme.text.card.fontFamily} ;
+  font-size: ${({theme}) => theme.text.card.fontSize} ;
+  font-weight: 800;
 `
 
 export const CardPrize = styled.h3`
   margin: 0.7rem;
-  font-size: 1rem;
+  font-family: ${({theme}) => theme.text.card.fontFamily} ;
+  font-size: ${({theme}) => theme.text.card.fontSize} ;
 `
 
 export const CardText = styled.p`

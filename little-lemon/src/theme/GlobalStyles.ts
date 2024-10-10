@@ -1,8 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+@font-face {
+  font-family: 'Karla';
+  src: local('Karla'), url(./fonts/Karla-VariableFont_wght.ttf) format(truetype);
+}
+@font-face {
+  font-family: 'MarkaziText';
+  src: local('MarkaziText'), url(./fonts/MarkaziText-VariableFont_wght.ttf) format(truetype);
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: ${({theme}) => theme.text.normal.fontFamily};
+  font-size: ${({theme}) => theme.text.normal.fontSize};
   line-height: 1.5;
 
   color-scheme: light dark;
