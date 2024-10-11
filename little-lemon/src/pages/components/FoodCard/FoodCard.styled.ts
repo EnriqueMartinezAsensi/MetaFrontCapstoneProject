@@ -10,12 +10,12 @@ export const FoodCardWrapper = styled.div`
   width: 28%;
   background-color: ${({theme}) => theme.colors.common.grey};
   border-radius: ${({theme}) => theme.radiuses.medium}px;
+  overflow: hidden;
 `
 
 export const FoodCardImg = styled.img`
   width: 100%;
   height: 35%;
-  border-radius: ${({theme}) => theme.radiuses.medium}px;
 `
 
 export const TitleWrapper = styled.div`

@@ -1,24 +1,31 @@
-import FoodImage from "../../../assets/images/restauranfood.jpg"
+
 import Button from "../Button";
 import { ButtonContainer, HeadSubtitle, HeadTitle, Image, ScrollerImageWrapper, ScrollerTextWrapper, ScrollerWrapper } from "./Scroller.styled";
 
-const Scroller = () => {
+type ScrollerProps = {
+  title:  string,
+  subtitle: string,
+  text: string,
+  image: string,
+  dark: boolean,
+}
+
+const Scroller = ({title, subtitle, text, image, dark}:ScrollerProps) => {
   const nagigateOnClick  = () => {
 
   }
 
   return <ScrollerWrapper >
-    <ScrollerTextWrapper>
-      <HeadTitle>Little Lemon</HeadTitle>
-      <HeadSubtitle>Chicago</HeadSubtitle>
-      <p>We are a family owned Mediterranean restaurant, located on  Maldove Street in Chicago, Illionis. We focus
-      on traditional recipes served with a modern twist.</p>
+    <ScrollerTextWrapper dark={dark}>
+      <HeadTitle>{title}</HeadTitle>
+      <HeadSubtitle>{subtitle}</HeadSubtitle>
+      <p>{text}</p>
       <ButtonContainer>
         <Button disabled={false} label="Reserve a table" handleClick={() => nagigateOnClick}/>
       </ButtonContainer>
     </ScrollerTextWrapper>
     <ScrollerImageWrapper>
-      <Image src= {FoodImage} alt="Image of the restaurant's delicious food."/>
+      <Image src= {image} alt="Image of the restaurant's delicious food."/>
     </ScrollerImageWrapper>
   </ScrollerWrapper>
 }

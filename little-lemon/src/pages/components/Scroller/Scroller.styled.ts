@@ -1,18 +1,25 @@
 import styled from "styled-components";
 
+type ScrollerProps = {
+  dark: boolean,
+}
+
 export const ScrollerWrapper = styled.section`
   display: flex;
   position: relative;
   height: 500px;
   justify-content: space-between;
 `
-export const ScrollerTextWrapper = styled.div`
+export const ScrollerTextWrapper = styled.div<ScrollerProps>`
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 50%;
   >p, h2{
-    color: ${({theme}) => theme.colors.common.white};
+    color: ${({dark, theme}) => {
+      if(dark) return theme.colors.common.white;
+      return theme.colors.common.black;
+    }};
   }
 `
 
