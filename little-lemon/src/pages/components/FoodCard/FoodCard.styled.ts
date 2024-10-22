@@ -20,7 +20,6 @@ export const FoodCardImg = styled.img`
 
 export const TitleWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
   width: 100%;
 `
@@ -39,6 +38,7 @@ export const CardPrize = styled.h3`
 `
 
 export const CardText = styled.p`
-  margin: 0.5rem;
+  margin: 0 0.5rem;
+  flex-grow: 1;
   text-align: center;
 `
