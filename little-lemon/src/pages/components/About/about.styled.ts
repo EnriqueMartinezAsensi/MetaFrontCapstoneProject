@@ -8,6 +8,12 @@ export const AboutWrapper = styled.section`
   display: flex;
   position: relative;
   justify-content: space-between;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 `
 export const AboutTextWrapper = styled.div<AboutProps>`
   display: flex;
@@ -22,10 +28,18 @@ export const AboutTextWrapper = styled.div<AboutProps>`
     }};
     text-align: justify;
   }
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    width: 80%;
+    margin: 1rem 0 0 0;
+  }
 `
 export const AboutImageWrapper = styled.div`
   width: 50%;
   position: relative;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    position: inherit;
+    margin: 0 0 1rem 0;
+  }
 `
 export const AboutImage1 = styled.img`
   margin: 2rem 0;

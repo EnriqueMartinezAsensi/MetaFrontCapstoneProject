@@ -10,4 +10,9 @@ export const SepcialsCardWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 0 3rem 0;
+  flex-wrap: wrap;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `

@@ -6,6 +6,9 @@ export const TestimonialCardWrapper = styled.div`
   background-color: ${({theme}) => theme.colors.common.grey};
   text-align: center;
   border-radius: ${({theme}) => theme.radiuses.medium}px;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    width: 40%;
+  }
 `
 
 export const TestimonialCardTitle = styled.h3`

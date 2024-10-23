@@ -58,6 +58,9 @@ const theme = {
   transitions: {
     normal: `0.3`,
   },
+  media:{
+    first: 1020,
+  },
 };
 
 export default theme;

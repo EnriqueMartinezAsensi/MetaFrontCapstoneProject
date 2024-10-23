@@ -11,6 +11,9 @@ export const FoodCardWrapper = styled.div`
   background-color: ${({theme}) => theme.colors.common.grey};
   border-radius: ${({theme}) => theme.radiuses.medium}px;
   overflow: hidden;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    width: 80%;
+  }
 `
 
 export const FoodCardImg = styled.img`
@@ -21,6 +24,7 @@ export const FoodCardImg = styled.img`
 export const TitleWrapper = styled.div`
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
   width: 100%;
 `
 

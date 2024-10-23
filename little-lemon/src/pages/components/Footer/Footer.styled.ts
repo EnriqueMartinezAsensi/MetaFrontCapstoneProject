@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
+  display: flex;
   width: 100%;
   >*{
     color: ${({theme}) => theme.colors.common.white};
@@ -12,6 +13,19 @@ export const FooterWrapper = styled.footer`
     }
   }
 `
+export const FooterItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 20px;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    width: 40%;
+    flex-grow: 1;
+    margin: 1rem;
+    align-items: center;
+  }
+`
+
 export const FooterMenu = styled.menu`
   display: flex;
   flex-direction: row;
@@ -19,12 +33,10 @@ export const FooterMenu = styled.menu`
   list-style-type: none;
   margin: 0px;
   padding: 0px;
-`
-export const FooterItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin: 20px;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 `
 export const FooterTitle = styled.h1`
   margin: 0;

@@ -7,6 +7,10 @@ export const TestimonialWrapper = styled.section`
 export const TestimonalCardsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 `
 
 export const TestimonialsTitle = styled.h1`
@@ -14,4 +18,7 @@ export const TestimonialsTitle = styled.h1`
   font-family: ${({theme}) => theme.text.subtitle.fontFamily};
   font-size: ${({theme}) => theme.text.title.fontSize};
   color: ${({theme}) => theme.colors.common.white};
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    margin: 1rem
+  }
 `

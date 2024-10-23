@@ -21,6 +21,9 @@ export const MenuList = styled.ul`
   display: flex;
   flex-flow: row;
   list-style-type: none;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    display: none;
+  }
 `
 
 export const MenuItem = styled.li`
