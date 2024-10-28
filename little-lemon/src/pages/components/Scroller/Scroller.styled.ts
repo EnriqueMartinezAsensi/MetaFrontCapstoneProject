@@ -48,6 +48,10 @@ export const Image = styled.img`
   margin: 50px 0px 0px 0px;
   z-index: 90;
   border-radius: ${({theme})=> theme.radiuses.medium}px;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 export const HeadTitle = styled.h1`

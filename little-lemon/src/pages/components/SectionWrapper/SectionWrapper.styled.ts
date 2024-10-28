@@ -19,4 +19,8 @@ export const Section = styled.section`
   max-width: 1027px;
   min-width: 660px;
   margin: auto;
+  @media(max-width: ${({theme})=> theme.media.first}px) {
+    min-width: 0;
+    width: 100%;
+  }
 `
