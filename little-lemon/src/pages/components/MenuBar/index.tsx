@@ -1,4 +1,4 @@
-import { MenuList, MenuHolder, MenuItem, StickyBar, MenuLogo, BurgerMenu, VerticalMenuHolder } from "./MenuBar.styled";
+import { MenuList, MenuHolder, MenuItem, StickyBar, MenuLogo, BurgerMenu, VerticalMenuHolder, MemuListVertical, MenuLink } from "./MenuBar.styled";
 import Logo from "./../../../assets/images/Logo.svg"
 import BurgerIcon from "../../../assets/components/BurgerIcon";
 import { useState } from "react";
@@ -11,17 +11,19 @@ const MenuBar = () => {
   return <StickyBar>
     <MenuHolder>
       <BurgerMenu onClick={() => setIsMenuActive(!isMenuActive)}>
-        <BurgerIcon size="75" ></BurgerIcon>
+        <BurgerIcon size="75" active={isMenuActive} ></BurgerIcon>
       </BurgerMenu>
       <MenuLogo src={Logo} alt="Logo" />
-      <MenuList active={isMenuActive}>
-        {RouteProvider.map((route) => <MenuItem>{route.name}</MenuItem>)}
+      <MenuList>
+        {RouteProvider.map((route) => <MenuItem><MenuLink to={route.route}>{route.name}</MenuLink></MenuItem>)}
       </MenuList>
-      <VerticalMenuHolder active={isMenuActive} />
+      <VerticalMenuHolder active={isMenuActive}>
+        <MemuListVertical active={isMenuActive}>
+          {RouteProvider.map((route) => <MenuItem><MenuLink to={route.route}>{route.name}</MenuLink></MenuItem>)}
+        </MemuListVertical>
+      </VerticalMenuHolder>
     </MenuHolder>
   </StickyBar>
 }
-
-//Tienes que crear un componente debajo de la barra para que se displayee cuando clicas el botón. Se redimensiona, cambia en transparencia. 
 
 export default MenuBar;

@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
-export const BurgerSVGContainer = styled.svg`
-  fill:transparent;
+type BurgerSVGContainerProps = {
+  active: boolean;
+}
+
+export const BurgerSVGContainer = styled.svg<BurgerSVGContainerProps>`
+  fill:${({ active, theme }) => {
+        return active ? theme.colors.button.normal.background : "transparent";
+  }};;
   transition: ${({theme})=> theme.transitions.normal}s;
+
   
-  &:hover{
+  @media(pointer: fine){
     fill: ${({theme})=> theme.colors.button.normal.background};
   }
+
 `
 

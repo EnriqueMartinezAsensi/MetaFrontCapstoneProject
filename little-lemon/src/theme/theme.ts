@@ -4,6 +4,7 @@ const theme = {
       black: `black`,
       grey: `lightgrey`,
       white: `white`,
+      transparent: `transparent`,
     },
     primary: {
       main: `#495E57`,

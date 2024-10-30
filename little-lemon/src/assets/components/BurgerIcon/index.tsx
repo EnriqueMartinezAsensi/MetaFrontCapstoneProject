@@ -2,10 +2,12 @@ import { BurgerSVGContainer } from "./BurgerIcon.styled";
 
 type BurgerIconProps = {
   size: string;
+  active: boolean;
 }
 
-const BurgerIcon = ({size}:BurgerIconProps)  =>{ 
+const BurgerIcon = ({size, active}:BurgerIconProps)  =>{ 
   return <BurgerSVGContainer 
+    active={active}
     x="0px" 
     y="0px" 
     width={size} 
