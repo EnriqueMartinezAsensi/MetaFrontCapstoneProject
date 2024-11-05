@@ -3,6 +3,7 @@ const theme = {
     common: {
       black: `black`,
       grey: `lightgrey`,
+      darkergreen: `#333333`,
       white: `white`,
       transparent: `transparent`,
     },

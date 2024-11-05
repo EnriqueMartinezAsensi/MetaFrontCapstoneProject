@@ -23,6 +23,7 @@ export const MenuHolder = styled.div`
   display: flex;
   flex-flow: row;
   justify-content: space-between;
+  align-items: center;
   max-width: 1027px;
   min-width: 660px;
   height: 100%;
@@ -55,7 +56,7 @@ export const MenuLink = styled(Link)`
   font-weight: ${({ theme }) => theme.text.navigationBar.fontWeight};
 `
 export const MenuLogo = styled.img`
-  height: 75%;
+  height: 60%;
   margin: 0 0.5rem;
   align-self: center;
   @media (max-width: ${({ theme }) => theme.media.first}px) {
@@ -68,6 +69,14 @@ export const BurgerMenu = styled.div`
     display: block;
   }
 `;
+
+export const BackButton = styled.div`
+  display: none;
+  @media (max-width: ${({ theme }) => theme.media.first}px) {
+    display: block;
+    margin: 0.3rem;
+  }
+`
 
 export const VerticalMenuHolder = styled.div<VerticalMenuHolderProps>`
   position: fixed;

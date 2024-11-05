@@ -5,15 +5,22 @@ import { Spacer } from "../MainPage/MainPage.styled";
 import Counter from "../components/Counter";
 import FormBundler from "../components/FormBundler";
 import SelectStyled from "../components/SelectStyled";
-import { CalendarHolder, FormLabel, ReservationsHolder } from "./BookingPage.styled";
+import { CalendarHolder, FormLabel, ReservationsHolder, ReserveButton } from "./BookingPage.styled";
 import SelectFromList from "../components/SelectFromList";
+import { useNavigate } from "react-router-dom";
 
 const BookingPage = () => {
   const [CalendarValue, setCalendarValue] = useState<Date>();
   const [gests, setGuests] = useState<number>(2);
+  const [daySlice, setDaySlice] = useState<string>("");
   const [hour, setHour] = useState<string>("");
+  const navigate = useNavigate();
 
-  return <ReservationsHolder>
+  const handleClick = () => {
+    navigate("/");
+  }
+
+  return <ReservationsHolder className="">
     <MenuBar/>
     <Spacer />
     <FormBundler vertical={false}>
@@ -24,12 +31,17 @@ const BookingPage = () => {
       <Counter value={gests} onChange={setGuests}></Counter>
     </FormBundler>
     <FormBundler vertical={true}>
-      <FormLabel>Select hour</FormLabel>
-      <SelectFromList options={["uno", "dos", "tres"]} value={hour} onChange={setHour}></SelectFromList>
+      <FormLabel>When?</FormLabel>
+      <SelectFromList options={["Breakfast", "Lunch", "Dinner"]} value={daySlice} onChange={setDaySlice}></SelectFromList>
     </FormBundler>
     <CalendarHolder>
       <Calendar onChange={(value) => setCalendarValue(value)} value={CalendarValue || new Date(Date.now())}></Calendar>
     </CalendarHolder>
+    <FormBundler vertical={true}>
+      <FormLabel>Select hour</FormLabel>
+      <SelectFromList options={["13:00", "13:30", "14:00", "14:30", "15:00","15:30"]} value={hour} onChange={setHour}></SelectFromList>
+    </FormBundler>
+    <ReserveButton  disabled={false} handleClick={() => handleClick} label="Reserve"></ReserveButton>
   </ReservationsHolder>
 }
 

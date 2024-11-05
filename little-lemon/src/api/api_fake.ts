@@ -1,18 +1,18 @@
-const seededRandom = function (seed) {
-  var m = 2 ** 35 - 31;
-  var a = 185852;
-  var s = seed % m;
+const seededRandom = function (seed:number) {
+  const m = 2 ** 35 - 31;
+  const a = 185852;
+  let s = seed % m;
   return function () {
     return (s = (s * a) % m) / m;
   };
 };
 
-const readData = (date) => {
+const readData = (date:string) => {
   const storedData = JSON.parse(localStorage.getItem("BookingAPIData"));
 
   if (date && storedData) {
     const storedFiltratedData = storedData.filter(
-      (reservation) => reservation?.date === date.toISOString().split("T")[0]
+      (reservation:string) => reservation?.date === date.toISOString().split("T")[0]
     );
     return storedFiltratedData;
   }
