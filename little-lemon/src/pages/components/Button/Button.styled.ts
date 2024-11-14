@@ -14,7 +14,7 @@ margin: 0.7rem;
   border-color: transparent;
   background-color: ${({theme}) => theme.colors.button.normal.background};
   transition: all ${({theme}) => theme.transitions.normal}s;
-  &:hover{
+  &:hover:enabled{
     color: ${({theme}) => theme.colors.button.normal.background};
     background-color: ${({theme}) => theme.colors.button.click.background};
     border: 2px solid ${({theme}) => theme.colors.button.normal.background};

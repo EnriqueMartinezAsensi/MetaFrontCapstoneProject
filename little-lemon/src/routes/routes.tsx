@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 //Pages
 import MainPage from "../pages/MainPage";
 import BookingPage from "../pages/BookingPage";
+import BookConfirmPage from "../pages/BookConfirmPage";
 
 const routes: RouteObject[] = [
   {
@@ -15,6 +16,11 @@ const routes: RouteObject[] = [
     path: "/book",
     element: <BookingPage />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/confirm",
+    element: < BookConfirmPage/>,
+    errorElement: <ErrorPage />
   }
 ];
 

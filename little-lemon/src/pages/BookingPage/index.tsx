@@ -16,8 +16,8 @@ const BookingPage = () => {
   const [hour, setHour] = useState<string>("");
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/");
+  const handleClick = ()  => {
+    navigate("/confirm");
   }
 
   return <ReservationsHolder className="">
@@ -42,7 +42,7 @@ const BookingPage = () => {
         <FormLabel>Select hour</FormLabel>
         <SelectFromList options={["13:00", "13:30", "14:00", "14:30", "15:00","15:30", "16:00"]} value={hour} onChange={setHour}></SelectFromList>
       </FormBundler>
-      <ReserveButton  disabled={!CalendarValue||!daySlice||!hour} handleClick={() => handleClick} label="Reserve"></ReserveButton>
+      <ReserveButton  disabled={!CalendarValue||!daySlice||!hour} handleClick={handleClick} label="Reserve"></ReserveButton>
     </FromSeparator>
     <FromSeparator active={true}>
 

@@ -4,7 +4,7 @@ type ButtonProps = {
   className?: string;
   label: string;
   disabled: boolean;
-  handleClick: () => React.MouseEventHandler<HTMLDivElement>;
+  handleClick: () => void;
 };
 
 const Button = ({ className, label, disabled, handleClick }: ButtonProps) => {
