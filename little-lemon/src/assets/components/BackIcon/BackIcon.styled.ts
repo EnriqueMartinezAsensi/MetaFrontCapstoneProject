@@ -13,5 +13,6 @@ export const StyledPolyline = styled.polyline`
   stroke: ${({theme}) => theme.colors.primary.main};
   stroke-linecap:round;
   stroke-linejoin:round;
-  stroke-width:27px;
+  stroke-width:35px;
+  transform: scale(80%) translate(9%, 11%);
 `

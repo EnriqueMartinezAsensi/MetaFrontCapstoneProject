@@ -12,7 +12,7 @@ const MenuBar = () => {
   return <StickyBar>
     <MenuHolder>
       <BurgerMenu onClick={() => setIsMenuActive(!isMenuActive)}>
-        <BurgerIcon size="75" active={isMenuActive} ></BurgerIcon>
+        <BurgerIcon size="60" active={isMenuActive} ></BurgerIcon>
       </BurgerMenu>
       <MenuLogo src={Logo} alt="Logo" />
       <BackButton>

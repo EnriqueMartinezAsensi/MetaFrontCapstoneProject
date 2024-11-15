@@ -56,9 +56,8 @@ export const MenuLink = styled(Link)`
   font-weight: ${({ theme }) => theme.text.navigationBar.fontWeight};
 `
 export const MenuLogo = styled.img`
-  height: 60%;
-  margin: 0 0.5rem;
-  align-self: center;
+  display: block;
+  height: 50%;
   @media (max-width: ${({ theme }) => theme.media.first}px) {
   }
 `;
