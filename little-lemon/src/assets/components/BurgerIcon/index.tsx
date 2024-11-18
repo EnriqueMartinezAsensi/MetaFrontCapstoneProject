@@ -7,7 +7,7 @@ type BurgerIconProps = {
 
 const BurgerIcon = ({size, active}:BurgerIconProps)  =>{ 
   return <BurgerSVGContainer 
-    active={active}
+    $active={active}
     x="0px" 
     y="0px" 
     width={size} 

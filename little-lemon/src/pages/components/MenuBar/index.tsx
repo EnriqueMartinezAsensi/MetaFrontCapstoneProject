@@ -4,10 +4,12 @@ import BurgerIcon from "../../../assets/components/BurgerIcon";
 import { useState } from "react";
 import { RouteProvider } from "../../../types/routes";
 import BackIcon from "../../../assets/components/BackIcon";
+import { useNavigate } from "react-router-dom";
 
 
 const MenuBar = () => {
   const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
+  const navigate = useNavigate();
 
   return <StickyBar>
     <MenuHolder>
@@ -15,15 +17,15 @@ const MenuBar = () => {
         <BurgerIcon size="60" active={isMenuActive} ></BurgerIcon>
       </BurgerMenu>
       <MenuLogo src={Logo} alt="Logo" />
-      <BackButton>
+      <BackButton onClick={() => navigate(-1)}>
         <BackIcon />
       </BackButton>
       <MenuList>
-        {RouteProvider.map((route) => <MenuItem><MenuLink to={route.route}>{route.name}</MenuLink></MenuItem>)}
+        {RouteProvider.map((route) => <MenuItem key={route.name}><MenuLink to={route.route}>{route.name}</MenuLink></MenuItem>)}
       </MenuList>
-      <VerticalMenuHolder active={isMenuActive}>
-        <MemuListVertical active={isMenuActive}>
-          {RouteProvider.map((route) => <MenuItem><MenuLink to={route.route}>{route.name}</MenuLink></MenuItem>)}
+      <VerticalMenuHolder $active={isMenuActive}>
+        <MemuListVertical $active={isMenuActive}>
+          {RouteProvider.map((route) => <MenuItem key={route.name}><MenuLink to={route.route}>{route.name}</MenuLink></MenuItem>)}
         </MemuListVertical>
       </VerticalMenuHolder>
     </MenuHolder>

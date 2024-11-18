@@ -6,7 +6,7 @@ type FormBundlerProps = {
 }
 
 const FormBundler = ({ children, vertical }:FormBundlerProps) => {
-  return <FromBundlerWrapper vertical={vertical}>{children}</FromBundlerWrapper>
+  return <FromBundlerWrapper $vertical={vertical}>{children}</FromBundlerWrapper>
 }
 
 export default FormBundler;

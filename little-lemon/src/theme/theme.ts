@@ -1,3 +1,6 @@
+const markaziText = "MarkaziText, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+const karla = "Karla, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace";
+
 const theme = {
   colors: {
     common: {
@@ -32,24 +35,24 @@ const theme = {
   },
   text: {
     title: {
-      fontFamily: "MarkaziText",
+      fontFamily: markaziText,
       fontSize: "60pt",
     },
     subtitle: {
-      fontFamily: "MarkaziText",
+      fontFamily: markaziText,
       fontSize: "40pt",
     },
     normal: {
-      fontFamily: "Karla",
+      fontFamily: karla,
       fontSize: "18pt",
     },
     card: {
-      fontFamily: "Karla",
+      fontFamily: karla,
       fontSize: "16pt",
       lineHeight: "1.5",
     },
     navigationBar: {
-      fontFamily: "Karla",
+      fontFamily: karla,
       fontSize: "14pt",
       fontWeight: 600,
     },

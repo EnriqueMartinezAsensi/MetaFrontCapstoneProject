@@ -59,6 +59,7 @@ export const HeadTitle = styled.h1`
   font-family: ${({theme}) => theme.text.title.fontFamily};
   font-size: ${({theme}) => theme.text.title.fontSize};
   color: ${({theme}) => theme.colors.button.normal.background};
+  line-height: 3rem;
 `
 
 export const HeadSubtitle = styled.h2`

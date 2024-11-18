@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 type FromBundlerWrapperProps = {
-  vertical: boolean;
+  $vertical: boolean;
 }
 
 export const FromBundlerWrapper = styled.div<FromBundlerWrapperProps>`
   display: flex;
-  flex-flow: ${({vertical}) => vertical ? "column" : "row"};
+  flex-flow: ${({$vertical}) => $vertical ? "column" : "row"};
   justify-content: space-around;
   align-items: center;
   width: 90%;

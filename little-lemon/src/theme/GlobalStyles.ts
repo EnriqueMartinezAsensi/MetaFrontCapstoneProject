@@ -3,11 +3,11 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 @font-face {
   font-family: 'Karla';
-  src: local('Karla'), url(./fonts/Karla-VariableFont_wght.ttf) format(truetype);
+  src: local('Karla'), url(/fonts/Karla-VariableFont_wght.ttf) format(truetype);
 }
 @font-face {
   font-family: 'MarkaziText';
-  src: local('MarkaziText'), url(./fonts/MarkaziText-VariableFont_wght.ttf) format(truetype);
+  src: local('MarkaziText'), url(/fonts/MarkaziText-VariableFont_wght.ttf) format(truetype);
 }
 
 :root {

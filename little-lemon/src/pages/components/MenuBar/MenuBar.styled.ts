@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 type MenuListProps = {
-  active: boolean;
+  $active: boolean;
 };
 
 type VerticalMenuHolderProps = {
-  active: boolean;
+  $active: boolean;
 };
 
 export const StickyBar = styled.div`
@@ -65,15 +65,15 @@ export const MenuLogo = styled.img`
 export const BurgerMenu = styled.div`
   display: none;
   @media (max-width: ${({ theme }) => theme.media.first}px) {
-    display: block;
+    display: flex;
   }
 `;
 
 export const BackButton = styled.div`
   display: none;
   @media (max-width: ${({ theme }) => theme.media.first}px) {
-    display: block;
-    margin: 0.3rem;
+    display: flex;
+    margin: 0 0.3rem;
   }
 `
 
@@ -81,10 +81,10 @@ export const VerticalMenuHolder = styled.div<VerticalMenuHolderProps>`
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: ${({ active }) => (active ? "rgba(255, 255, 255, 0.98)" : "rgba(255, 255, 255, 0)")};
+  background-color: ${({ $active }) => ($active ? "rgba(255, 255, 255, 0.98)" : "rgba(255, 255, 255, 0)")};
   z-index: -1;
-  top: ${({ active }) => {
-    return active ? "80px" : "-120vh";
+  top: ${({ $active }) => {
+    return $active ? "80px" : "-120vh";
   }};
   transition: ${({ theme }) => theme.transitions.normal}s;
 `;
@@ -94,7 +94,7 @@ export const MemuListVertical = styled.ul<MenuListProps>`
   flex-flow: column;
   list-style-type: none;
   align-items: start;
-  display: ${({ active }) => {
-    return active ? "flex-box" : "none";
+  display: ${({ $active }) => {
+    return $active ? "flex-box" : "none";
   }};
 `;

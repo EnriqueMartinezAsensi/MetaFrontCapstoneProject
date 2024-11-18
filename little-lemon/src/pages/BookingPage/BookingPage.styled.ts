@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../components/Button";
 
 type FromSeparatorProps = {
-  active: boolean;
+  $active: boolean;
 }
 
 export const FormLabel = styled.label`
@@ -19,14 +19,27 @@ export const ReservationsHolder = styled.div`
   width: 100%;
   height: fit-content;
   background-color: ${({theme}) => theme.colors.common.white};
+  
 `;
 
 export const ReserveButton = styled(Button)`
   width: 90%;
+  
+  @media (min-width: ${({ theme }) => theme.media.first}px) {
+    max-width: 400px;
+    margin: 3rem;
+  }
 `;
 
 export const FromSeparator = styled.div<FromSeparatorProps>`
-  display: ${({active}) => active ? "block":"none"};
+  display: ${({$active}) => $active ? "flex":"none"};
+  flex-flow: column;
+  align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+
+  @media (min-width: ${({ theme }) => theme.media.first}px) {
+    max-width: 700px;
+  }
 `

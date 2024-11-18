@@ -12,7 +12,7 @@ const SelectFromList = ({ options, value, onChange }: SelectFromListProps) => {
       <SelectableItem 
           onClick={() => {onChange(eachOption)}} 
           key={eachOption}
-          active={value === eachOption}
+          $active={value === eachOption}
       >
       {eachOption}
       </SelectableItem>)

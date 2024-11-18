@@ -29,7 +29,7 @@ export const StyledCalendar = styled(DateCalendar)`
   }
 
   * {
-    font-size: ${({ theme }) => theme.text.card.textFontSize};
+    font-size: ${({ theme }) => theme.text.card.fontSize};
     font-family: ${({ theme }) => theme.text.card.fontFamily};
     line-height: ${({ theme }) => theme.text.card.lineHeight};
   }

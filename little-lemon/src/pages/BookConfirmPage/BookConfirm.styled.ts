@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
+type UserInfoHolderProps = {
+  $active: boolean
+}
+
 export const BookConfirmHolder = styled.div`
   width: 100%;
   height: fit-content;
   background-color: ${({theme}) => theme.colors.common.white};
 `
-export const UserInfoHolder = styled.form`
-  display: flex;
+export const UserInfoHolder = styled.form<UserInfoHolderProps>`
+  display: ${({$active}) => $active ? "none" : "flex"};
   flex-flow: column;
   margin: 1rem;
 `
@@ -59,3 +63,41 @@ export const CheckboxStyled = styled.input`
     border-color: ${({theme}) => theme.colors.primary.main};
   }
 `;
+
+export const FormButton = styled.input`
+  margin: 0.7rem;
+  border-radius: ${({theme}) => theme.radiuses.medium}px;
+  width: 90%;
+  min-width: fit-content;
+  height: 2.5rem;
+  font-family: ${({theme}) => theme.text.card.fontFamily} ;
+  font-size: ${({theme}) => theme.text.card.fontSize};
+  font-weight: 800;
+  color: ${({theme}) => theme.colors.button.normal.text};
+  border-color: transparent;
+  background-color: ${({theme}) => theme.colors.button.normal.background};
+  transition: all ${({theme}) => theme.transitions.normal}s;
+  &:hover:enabled{
+    color: ${({theme}) => theme.colors.button.normal.background};
+    background-color: ${({theme}) => theme.colors.button.click.background};
+    border: 2px solid ${({theme}) => theme.colors.button.normal.background};
+  }
+  &:disabled{
+    background-color: ${({theme}) => theme.colors.button.disabled.background};
+  }
+`
+export const DataDisplayer = styled.label`
+  margin: 1rem 0;
+  text-wrap: balance;
+  text-align: center;
+  font-family: ${({theme}) => theme.text.subtitle.fontFamily};
+  font-size: larger;
+  line-height: normal;
+`
+export const ReserveConfirmHolder = styled.div<UserInfoHolderProps>`
+  display: ${({$active}) => $active ? "flex" : "none"};
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+`
